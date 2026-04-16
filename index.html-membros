@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Jornada - Jornada 365 Dias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard">
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal active">
+        <div class="modal-content">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Insira seu email para continuar sua jornada:</p>
+            <input type="email" id="userEmail" placeholder="Seu email de cadastro" class="input-login">
+            <button onclick="login()" class="btn-principal">Entrar na Jornada</button>
+            <p class="login-help">Não tem acesso? <a href="index.html">Compre agora</a></p>
+        </div>
+    </div>
+
+    <!-- Dashboard Principal -->
+    <div id="dashboard" class="dashboard-container hidden">
+        <header class="dashboard-header">
+            <div class="logo">🌟 Jornada 365 Dias</div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <button onclick="logout()" class="btn-sair">Sair</button>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="progresso">
+                <div class="progresso-bar">
+                    <div id="progressBar" class="progresso-fill"></div>
+                </div>
+                <div class="progresso-text">
+                    <span id="progressoPorcentagem">0%</span> concluído
+                    <span class="atual">Semana <span id="semanaAtual">1</span> | Dia <span id="diaAtual">1</span></span>
+                </div>
+            </div>
+
+            <div class="proxima-sessao">
+                <h2 id="tituloDia">Dia 1 - Recomeço com Deus</h2>
+                <button onclick="avancarDia()" class="btn-continuar">📖 Continuar Jornada</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

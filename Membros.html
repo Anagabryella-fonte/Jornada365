@@ -1,87 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Jornada</title>
 
-    <title>Minha Jornada - Jornada 365 Dias</title>
-
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="dashboard">
 
-    <!-- LOGIN -->
-    <div id="loginModal" class="modal active">
-        <div class="modal-content">
-            <h2>Bem-vindo de volta!</h2>
-            <p>Insira seu email para continuar sua jornada:</p>
+<div id="loginModal" class="modal">
+<div class="modal-content">
+<h2>Entrar</h2>
+<input type="email" id="userEmail" placeholder="Seu email" class="input-login">
+<button onclick="login()" class="btn-principal">Entrar</button>
+</div>
+</div>
 
-            <input 
-                type="email" 
-                id="userEmail" 
-                placeholder="Seu email de cadastro" 
-                class="input-login"
-            >
+<div id="dashboard" class="hidden">
 
-            <button onclick="login()" class="btn-principal">
-                Entrar na Jornada
-            </button>
+<header class="dashboard-header">
+<span id="userName"></span>
+<button onclick="logout()" class="btn-sair">Sair</button>
+</header>
 
-            <p class="login-help">
-                Não tem acesso? <a href="index.html">Compre agora</a>
-            </p>
-        </div>
-    </div>
+<div class="progresso">
+<div class="progresso-bar">
+<div id="progressBar" class="progresso-fill"></div>
+</div>
+<p id="progressoPorcentagem">0%</p>
+</div>
 
-    <!-- DASHBOARD -->
-    <div id="dashboard" class="dashboard-container hidden">
+<div id="listaDias" class="lista-dias"></div>
+<div id="conteudoDia"></div>
 
-        <header class="dashboard-header">
-            <div class="logo">🌟 Jornada 365 Dias</div>
+</div>
 
-            <div class="user-info">
-                <span id="userName"></span>
-                <button onclick="logout()" class="btn-sair">Sair</button>
-            </div>
-        </header>
-
-        <div class="dashboard-content">
-
-            <!-- PROGRESSO -->
-            <div class="progresso">
-                <div class="progresso-bar">
-                    <div id="progressBar" class="progresso-fill"></div>
-                </div>
-
-                <div class="progresso-text">
-                    <span id="progressoPorcentagem">0%</span> concluído
-
-                    <span class="atual">
-                        Semana <span id="semanaAtual">1</span> |
-                        Dia <span id="diaAtual">1</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- PRÓXIMA SESSÃO -->
-            <div class="proxima-sessao">
-                <h2 id="tituloDia">Dia 1 - Recomeço com Deus</h2>
-
-                <button onclick="avancarDia()" class="btn-continuar">
-                    📖 Continuar Jornada
-                </button>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- JS (IMPORTANTE) -->
-    <script src="app.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>

@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Minha Jornada</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="dashboard">
 
 <div id="loginModal" class="modal">
-<div class="modal-content">
-<h2>Entrar</h2>
-<input type="email" id="userEmail" placeholder="Seu email" class="input-login">
-<button onclick="login()" class="btn-principal">Entrar</button>
-</div>
+  <div class="modal-content">
+    <h2>Entrar</h2>
+    <input type="email" id="userEmail" placeholder="Seu email" class="input-login">
+    <button onclick="login()" class="btn-principal">Entrar</button>
+  </div>
 </div>
 
 <div id="dashboard" class="hidden">
@@ -26,19 +27,20 @@
 <button onclick="logout()" class="btn-sair">Sair</button>
 </header>
 
+<h2 id="tituloDia"></h2>
+
 <div class="progresso">
-<div class="progresso-bar">
-<div id="progressBar" class="progresso-fill"></div>
-</div>
-<p id="progressoPorcentagem">0%</p>
+  <div class="progresso-bar">
+    <div id="progressBar" class="progresso-fill"></div>
+  </div>
+  <p id="progressoPorcentagem">0%</p>
 </div>
 
-<div id="listaDias" class="lista-dias"></div>
+<div id="listaDias"></div>
 <div id="conteudoDia"></div>
 
 </div>
 
 <script src="app.js"></script>
-
 </body>
 </html>

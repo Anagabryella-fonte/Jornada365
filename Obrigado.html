@@ -2,41 +2,24 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Acesso Liberado</title>
-
-<style>
-body {
-font-family: Arial;
-background: linear-gradient(135deg,#1e3c72,#2a5298);
-color:white;
-text-align:center;
-padding:50px;
-}
-
-.btn {
-background:gold;
-padding:15px 30px;
-color:black;
-text-decoration:none;
-border-radius:30px;
-display:inline-block;
-margin-top:20px;
-}
-</style>
-
 </head>
 
 <body>
 
 <h1>✨ Acesso liberado!</h1>
-<p>Clique abaixo para começar sua jornada</p>
+<p>Clique abaixo para acessar sua jornada</p>
 
-<a href="membros.html" class="btn">ACESSAR</a>
+<a href="membros.html">ACESSAR</a>
 
-<p style="margin-top:30px;font-size:12px;">
-Salve esse link para acessar sempre.
-</p>
+<script>
+const params = new URLSearchParams(window.location.search);
+const token = params.get("token");
+
+if (token) {
+    localStorage.setItem("jornada_token", token);
+}
+</script>
 
 </body>
 </html>
